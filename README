@@ -10,24 +10,21 @@ on Konqueror and Dolphin file managers.
 DEPENDENCIES
 `````````````
 The following libraries and development packages are needed:
-KDE >=4.2.x
-QT  >=4.4.x
+KDE Frameworks >=5.0.x
+QT             >=5.2.x
 
 
 INSTALLATION
 `````````````
      mkdir build
      cd build
-     cmake -DCMAKE_INSTALL_PREFIX=`kde4-config --prefix` ..         <- DON'T forget ..
+     cmake -DCMAKE_INSTALL_PREFIX=`kf5-config --prefix` ..         <- DON'T forget ..
      make
      su -c 'make install'
-     kbuildsycoca4
+     kbuildsycoca5 (optional)
 
-Because KOffice's own thumbnail-plugin supports the same
-mime-types, you may (== untested) need to disable/remove
-/usr/lib/kde4/kofficethumbnail.so
-/usr/share/kde4/services/kofficethumbnail.desktop
-
+No conflict exists with the kde4 based thumbnail plugins for KOffice and LibreOffice/OpenOffice. 
+If these are ever ported they are to be prefered.
 
 LICENCE
 ````````
